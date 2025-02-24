@@ -8,13 +8,14 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"sort"
 	"strings"
 )
 
 // VTResponse represents the relevant parts of the VirusTotal API response.
 type VTResponse struct {
-	Subdomains     []string          `json:"subdomains"`
-	UndetectedUrls [][]interface{}   `json:"undetected_urls"`
+	Subdomains     []string        `json:"subdomains"`
+	UndetectedUrls [][]interface{} `json:"undetected_urls"`
 }
 
 func main() {
@@ -133,8 +134,15 @@ func main() {
 		}
 	}
 
-	// Print unique lines.
+	// Convert map keys to a slice and sort them in ascending order.
+	var results []string
 	for result := range uniqueResults {
-		fmt.Println(result)
+		results = append(results, result)
+	}
+	sort.Strings(results)
+
+	// Print sorted unique lines.
+	for _, r := range results {
+		fmt.Println(r)
 	}
 }
