@@ -1,6 +1,6 @@
 # VirusTotal Scan Tool
 
-This tool is a simple command-line application written in Go that queries the VirusTotal Domain Report API and extracts either subdomains or undetected URLs based on the provided mode. It also supports API key chaining with up to three keys in case of quota errors.
+This tool is a simple command-line application written in Go that queries the VirusTotal Domain Report API and extracts either subdomains or undetected URLs based on the provided mode. It also supports API key chaining with up to six keys in case of quota errors.
 
 ## Features
 
@@ -20,3 +20,14 @@ Yes, you can install this tool using `go install`. To do so, run the following c
 
 ```bash
 go install github.com/gilsgil/vtscan@latest
+```
+
+## Keys Configuration
+```
+export VT_API_KEY={YOUR_KEY}
+export VT_API_KEY2={YOUR_KEY}
+export VT_API_KEY3={YOUR_KEY}
+export VT_API_KEY4={YOUR_KEY}
+export VT_API_KEY5={YOUR_KEY}
+export VT_API_KEY6={YOUR_KEY}
+```
