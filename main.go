@@ -48,6 +48,15 @@ func main() {
 		if key3 := os.Getenv("VT_API_KEY3"); key3 != "" {
 			keys = append(keys, key3)
 		}
+		if key4 := os.Getenv("VT_API_KEY4"); key4 != "" {
+			keys = append(keys, key4)
+		}
+		if key5 := os.Getenv("VT_API_KEY5"); key5 != "" {
+			keys = append(keys, key5)
+		}
+		if key6 := os.Getenv("VT_API_KEY6"); key6 != "" {
+			keys = append(keys, key6)
+		}
 	} else {
 		primary := os.Getenv("VT_API_KEY")
 		if primary == "" {
@@ -60,6 +69,15 @@ func main() {
 		}
 		if key3 := os.Getenv("VT_API_KEY3"); key3 != "" {
 			keys = append(keys, key3)
+		}
+		if key4 := os.Getenv("VT_API_KEY4"); key4 != "" {
+			keys = append(keys, key4)
+		}
+		if key5 := os.Getenv("VT_API_KEY5"); key5 != "" {
+			keys = append(keys, key5)
+		}
+		if key6 := os.Getenv("VT_API_KEY6"); key6 != "" {
+			keys = append(keys, key6)
 		}
 	}
 
@@ -101,7 +119,7 @@ func main() {
 	}
 
 	if resultBody == nil {
-		fmt.Println("Error: All provided API keys have exceeded quota or failed.")
+		//fmt.Println("Error: All provided API keys have exceeded quota or failed.")
 		os.Exit(1)
 	}
 
